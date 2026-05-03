@@ -1,0 +1,26 @@
+#!/ bin/bash
+
+# Definition af farver til terminal-output (godt for engagement)
+GREEN='\033[0;32m'
+NC='\033[0m'
+
+echo -e "${GREEN}Opsætter Treasure Hunt på Ubuntu-serveren...${NC}"
+
+# 1. Opret en skjult mappe i en sti, eleverne skal navigere til
+mkdir -p /var/games/treasure_vault
+
+# 2. Lav selve skatten (flaget)
+cat <<EOF > /var/games/treasure_vault/.secret_flag.txt
+***************************************************
+*                                                 *
+*   TILLYKKE! DU HAR FUNDET SKATTEN!              *
+*                                                 *
+*   KODEORD: WHITEHAT_VFS_2026                    *
+*                                                 *
+***************************************************
+EOF
+
+# 3. Sæt rettigheder (Eleverne skal kunne læse den, men ikke slette den)
+chmod 644 /var/games/treasure_vault/.secret_flag.txt
+
+echo -e "${GREEN}Skatten er gemt i /var/games/treasure_vault/ som en skjult fil.${NC}"
