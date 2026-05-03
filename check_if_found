@@ -1,0 +1,6 @@
+#!/bin/bash
+# Gem som tjek_skat.sh
+echo "Søger efter skatte-filen..."
+find / -name "treasure.txt" 2>/dev/null
+echo "Tjekker hvem der har adgang..."
+ls -l $(find / -name "treasure.txt" 2>/dev/null)
