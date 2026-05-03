@@ -1,9 +1,0 @@
-#!/bin/bash
-# Gem som cleanup.sh
-echo "Rydder op efter øvelsen..."
-rm -rf /home/*/.hemmelig
-rm -f /tmp/treasure.txt
-rm -f /var/tmp/treasure.txt
-# Sletter alle filer i home der indeholder ordet 'skat'
-find /home -type f -exec grep -l "KODEORD" {} + | xargs rm
-echo "Maskinen er klar til næste runde!"
